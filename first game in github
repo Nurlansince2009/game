@@ -1,26 +1,19 @@
 import random
-
 # Game options
 options = ["rock", "paper", "scissors"]
-
 # Score tracker
 player_score = 0
 computer_score = 0
-
 print("🎮 Welcome to Rock-Paper-Scissors!")
 print("💡 First to reach 3 points wins the game!\n")
-
 while player_score < 3 and computer_score < 3:
     player_choice = input("Enter your choice (rock, paper, scissors): ").lower()
-    
     # Input validation
     if player_choice not in options:
         print("❌ Invalid choice! Please type 'rock', 'paper', or 'scissors'.\n")
         continue
-        
     computer_choice = random.choice(options)
     print(f"🤖 Computer chose: {computer_choice}")
-    
     # Check the winner of the round
     if player_choice == computer_choice:
         print("🤝 It's a tie! No points awarded.")
@@ -32,9 +25,7 @@ while player_score < 3 and computer_score < 3:
     else:
         print("🤖 Computer won this round!")
         computer_score += 1
-        
     print(f"📊 Score -> You: {player_score} | Computer: {computer_score}\n")
-
 # Final game result
 print("--- GAME OVER ---")
 if player_score == 3:
